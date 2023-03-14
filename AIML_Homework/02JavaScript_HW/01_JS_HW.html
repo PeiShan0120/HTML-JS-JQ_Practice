@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- JavaScript Homework 01 -->
+    <title>JS_HW01</title>
+    <script>
+        //1.圓面積計算
+        function area() {
+            var a = document.getElementById('r').value;
+            if (a == "" || isNaN(a)) {
+                alert("請輸入數字");
+                return;
+            };
+            document.getElementById('ans').value = ((Math.pow(a, 2)) * Math.PI).toFixed(2);
+        };
+    </script>
+
+    <!-- JavaScript Homework 02 -->
+    <title>JS_HW02</title>
+    <script>
+        // 2.撰寫以下空格
+        // s1相當於FORM1.name.value  s2相當於FORM1.passwd.value(因此內無FORM所以用代號先表示)
+        function checkstring(s1, s2) {
+            if (!s1 || !s2) {
+                alert('EMPTY');
+                return false;
+            }
+            if (s2.length < 8) {
+                alert('passwd<8');
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <!-- JavaScript Homework 03 -->
+    <title>JS_HW03</title>
+    <script>
+        function CurrentDate() {
+            var date = new Date(); //區域變數
+            var d = date.getDate();
+            var m = date.getMonth() + 1;
+            var y = date.getFullYear();
+
+            document.getElementById('CurDate').value = y + '/' + m + '/' + d;
+        }
+
+        function display() {
+            var birthday = new Date(document.getElementById('birthday').value);
+            var today = new Date(); //區域變數
+            var age = today.getFullYear() - birthday.getFullYear();
+            var Ryears = birthday.getFullYear() - 1911;
+
+            birthday.setFullYear(today.getFullYear());
+
+            if (birthday > today) {
+                age -= 1;
+            }; //預設生日已過，所以多一歲
+
+            document.write("你的生日:民國" + Ryears + "年" + (birthday.getMonth() + 1) + "月" + birthday.getDate() + "日" + "<br>"); //getMounth 月份陣列從[0-11]，所以實際月要再加1
+            document.write("你目前的年齡是:" + age + "歲")
+        };
+    </script>
+
+    <!-- JavaScript Homework 04 -->
+    <title>JS_HW04</title>
+    <script>
+        function caculate() {
+            var h = document.getElementById('tall').value
+            var w = document.getElementById('kg').value
+
+            //isNaN()非數字為true
+            if (h == "" || w == "") {
+                alert("輸入不可為空");
+                return;
+            } else if (isNaN(h) || isNaN(w)) {
+                alert("請輸入數字");
+                return;
+            }
+
+            var result1 = document.getElementById('result1').value = (w / (Math.pow(h / 100, 2))).toFixed(2) //toFixed取小數點後2位,Mathpow次方
+            var result2 = document.getElementById('result2') //下面if跑完會回傳此,另外,setAttribute不能重複value來設定
+
+            if (result1 >= 27) {
+                result2.setAttribute('value', '肥胖');
+
+            } else if (24 <= result1) {
+                result2.setAttribute('value', '體重過重');
+
+            } else if (18.5 <= result1) {
+                result2.setAttribute('value', '正常範圍');
+
+            } else if (result1 < 18.5) {
+                result2.setAttribute('value', '體重過輕');
+            }
+        }
+    </script>
+
+    <!-- JavaScript Homework 05 -->
+    <!-- 作業格式 -->
+    <title>JS_HW05 Mouse Over/Out Example</title>
+
+    <script>
+        window.addEventListener('load', initImg);
+
+        function initImg() {
+            var pic = document.getElementsByName('picture');
+            pic[0].onmouseout = function() {
+                this.src = './imageHW05/out.jpg';
+            };
+            pic[0].onmouseover = function() {
+                this.src = './imageHW05/over.jpg';
+            };
+
+        }
+    </script>
+
+    <!-- 自行發想 -->
+    <script>
+        function dm() {
+            location.href = "https://tw.yahoo.com/"
+        };
+    </script>
+
+    <!-- JavaScript Homework 06 -->
+    <title>JS_HW06 select</title>
+    <script>
+        //wait for DOM to load
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            var e = document.getElementById('jumpmenu');
+
+            e.addEventListener("change", function() {
+
+                selectedURL = this.options[this.options.selectedIndex].value;
+                var yes = confirm('Are you sure that you like to go to ' + selectedURL + '?');
+                if (yes) {
+                    document.location.href = selectedURL;
+                    // document.getElementByID('msg').innerText = selectedURL;
+                } else {
+                    alert('Redo!');
+                };
+            });
+
+        });
+    </script>
+</head>
+
+<body onload="CurrentDate()">
+    <!-- JavaScript Homework 01 -->
+    <h1>1.圓形面積計算</h>
+        <form method>
+            請輸入半徑: <input type="text" id="r" name="r">
+            <input type="button" onclick="area()" name="計算" value="計算"> 面積是: <input type="text" id="ans" name="ans">
+        </form>
+
+        <hr>
+
+        <!-- JavaScript Homework 02 -->
+        <h1>2.撰寫以下空格</h>
+            <form action="01_JS_HW2(LOGIN.)html" method="post" name="FORM1">
+                name:<input type="text" name="name" id="name"><br> passwd:
+                <input type="password" name="password" id="passwd"><br>
+
+                <input type="radio" name="rdoCourse" value="1 checked">Java
+                <input type="radio" name="rdoCourse" value="2">C#<br>
+
+                <input type="submit" onclick="return checkstring(FORM1.name.value,FORM1.passwd.value);" style="width:60" value="OK">
+            </form>
+
+            <hr>
+
+            <!-- JavaScript Homework 03 -->
+            <h1>3.輸入今天日期,顯示民國日期與年齡</h>
+                <form>
+                    今天日期: <input type="text" id="CurDate" name="CurDate" readonly="readonly"> 你的生日: <input type="date" id="birthday" name="birthday">
+                    <input type="button" name="submit" value="submit" onclick="display()">
+                </form>
+
+                <hr>
+
+                <!-- JavaScript Homework 04 -->
+                <h1>4.BMI計算</h>
+                    <form>
+                        身高（公分）<input type="text" name="tall" id="tall">
+                        <br> 體重（公斤）
+                        <input type="text" name="kg" id="kg"><br>
+                        <input type="button" name="submit" value="submit" onclick="caculate()"><br> BMI指數
+
+                        <input type="text" name="BMI" id="result1">
+                        <br> 診斷結果
+                        <input type="text" name="result" id="result2"><br>
+                    </form>
+
+                    <hr>
+
+                    <!-- JavaScript Homework 05 -->
+                    <!-- 作業格式 -->
+                    <h1>5.mouseOver</h1>
+                    <h2>Javascript Mouse Over/Out Example</h2>
+                    <a href="https://tw.yahoo.com/">
+                        <img src="./imageHW05/over.jpg " name="picture" Border=0 alt="error ">
+                    </a>
+
+                    <hr>
+
+                    <!-- 自行發想 -->
+                    <h1>5.mouseOver</h>
+                        <h2>Javascript Mouse Over/Out Example</h2>
+
+                        <img src="./imageHW05/over.jpg " onmouseover="this.src='./imageHW05/over.jpg' " onmouseout="this.src='./imageHW05/out.jpg'" onclick="dm()" name="picture" Border=0 alt="error ">
+
+                        <hr>
+
+                        <!-- JavaScript Homework 06 -->
+                        <h1>6.select</h>
+                            <form name="navForm" action="{action page}">
+                                <select name="jumpmenu" id="jumpmenu">
+                            <option>Jump to...</option>
+                            <option value="http://www.ntu.edu.tw">NTU</option>
+                            <option value="http://www.nctu.edu.tw">NCTU</option>
+                            <option value="http://www.nthu.edu.tw">NTHU</option>
+                            </select>
+                            </form>
+
+</body>
+
+</html>

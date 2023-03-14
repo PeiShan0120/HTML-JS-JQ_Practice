@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<title> Hello Procreate!</title>
+<link rel="icon" type="images/x-icon" href="images/icon.png">
+
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<!--目錄-->
+
+<div class="navbar">
+    <center>
+        <table id="navtable">
+            <tr style="background-color: white;">
+                <th><a href="#TUTORIAL">TUTORIAL</a></th>
+                <th><a href="#BENEFIT">BENEFIT</a></th>
+                <th><a href="#BRUSH TYPE">BRUSH TYPE</a></th>
+                <th><a href="#INFO">MEMBERSHIP</a></th>
+            </tr>
+        </table>
+    </center>
+</div>
+
+
+
+<body>
+    <hearder>
+        <h1 id="unique">Easy Learning with Procreate<q>Try it Yourself</q></h1>
+    </hearder>
+    <h2>With this introduction, you can learn how to create digital art with Procreate on Ipad!<br>Want to learn more? Let's find out!</h2>
+
+
+    <!--寫實畫封面底圖-->
+    <center><img src="images/寫實畫.jpg" alt="Let's see some example!"></center>
+
+    <!--連結、跳頁、提示，套用按鍵動作-->
+    <center>
+        <a href="https://www.omia.com.tw/project/518233" target="_blank" title="Click to visit">
+            <p id="TUTORIAL">Here's Procreate Tutorial website for you!</p>
+        </a>
+    </center>
+
+
+    <!--引述文章內容至其他網站-->
+    <center>
+        <pre>
+         <div class="quote"> 
+            <!-- <blockquote cite="https://www.udemy.com/course/learning-procreate-from-scratch/"> -->
+        <p id="BENEFIT"><b>THE BENEFIT OF USING PROCREATE</b><br>
+            Gives you the feeling of real-world drawing combined with the power of digital art.<br>
+            Able to draw sketches, paint paintings, design illustrations, and make amazing animations.<br>
+            A complete art studio that you can take anywhere you go.
+            </p>
+        </div>
+        </pre>
+    </center>
+
+
+    <!--procreate廣告-->
+    <center>
+        <video src="mp4/procreate.mp4" muted autoplay loop id="myVideo">
+            Your browser does not support HTML5 video.
+        </video>
+        <br>
+
+        <!--2022年前10名最好用筆刷表格-->
+        <h2 id="BRUSH TYPE">USEFUL BRUSH TYPE ON PROCREATE</h2>
+        <p>Check out every brush type that you can use to make painting easier!
+            <br>If you can't choose, we have shown some on the following :
+        </p>
+
+        <center>
+            <table>
+                <caption><b>10 Best Free Procreate Brushes in 2022</b></caption>
+
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <td>Marmo Shale Brush</td>
+                    <td>Watercolor Brushes</td>
+                    <td>Nature Brush Set</td>
+                    <td>Flowers Brush Set</td>
+                    <td>Brick & Pattern Brush Set</td>
+                    <td>Curly Hair Brushes</td>
+                    <td>Skin Brushes</td>
+                    <td>Lettering Brushes</td>
+                    <td>Procreate Brush Shapes</td>
+                    <td>Procreate Glitter Brushes</td>
+                </tr>
+            </table>
+        </center>
+
+        <br><br>
+
+        <!--影片-->
+        <h2>After knowing how to choose brushes, we all know how to draw with procreate on Ipad now. <br>Quickly start your first painting and get your digital art!</h2><br>
+
+        <hr>
+
+        <!--會員資料表-->
+        <center>
+            <form action="/action_page.php">
+
+                <fieldset id="fieldset">
+                    <legend>Sign in to get more information!</legend>
+                    <table class="membership" id="INFO">
+
+                        <tr>
+                            <td><label for="First name">First name:</label></td>
+                            <td>
+                                <input type=" text " id="fname " name="fname " required value=" " class="input-name">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="Last name">Last name:</label></td>
+                            <td>
+                                <input type="text " id="fname " name="Iname " required value=" " class="input-name">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="Email">Email:</label></td>
+                            <td>
+                                <input type="text " id="email " name="email " required value=" " class="input-name">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="Country">Country:</label></td>
+                            <td>
+                                <input list="country" class="input-name">
+                                <datalist id="country">
+                            <option value="Taiwan">Taiwan</option>
+                            <option value="Canada">Canada</option>
+                            <option value="America">America</option>
+                            <option value="China">China</option>
+                            <option value="India">India</option>
+                            </datalist>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="Birthday">Birthday:</label></td>
+                            <td>
+                                <input type="date" id="Birthday" name="datemax" max="2022-09-15" class="input-name"><br><br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Gender:</td>
+                            <td>
+
+                                <input type="radio" id="gender1 " name="gender " value="Female "><label for="gender1">Female</label>
+                                <br>
+                                <input type="radio" id="gender2 " name="gender " value="Male "><label for="gender1">Male</label><br>
+                                <input type="radio" id="gender3 " name="gender " value="Other "><label for="gender1">Other</label><br><br>
+
+                            </td>
+                        </tr>
+
+                    </table>
+                    <br>
+
+                    <input type="submit" value="Submit">
+
+                </fieldset>
+            </form>
+        </center>
+
+        <br> <br>
+
+        <p style="font-size:100%;color:white">background images by alamy</p><br><br>
+
+        <footer>
+            <p style="color:white ">Feel Free To Contact Us! <a href="mailto:someoone@example.com ">Send Email</a></p>
+        </footer>
+
+
+</body>
+
+</html>

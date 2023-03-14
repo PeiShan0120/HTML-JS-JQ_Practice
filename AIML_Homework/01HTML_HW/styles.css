@@ -1,0 +1,175 @@
+/*文字*/
+
+body {
+    background-color: rgb(249, 242, 250);
+    background-image: url('images/background-blue\ leaves.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 4vw
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 2vw
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 2vw
+}
+
+
+/*連結*/
+
+a:link,
+a:visited {
+    color: rgb(174, 85, 247);
+    background-color: transparent;
+    text-decoration: none;
+    text-align: center"
+
+}
+
+a:hover,
+a:active {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(77, 33, 134);
+    background-color: transparent;
+    text-decoration: underline;
+    text-align: center"
+
+}
+
+
+/*圖像*/
+
+img {
+    width: 80%
+}
+
+
+/*表格*/
+
+table {
+    width: 80%;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px double rgba(162, 73, 214, 0.719);
+    border-collapse: collapse;
+    border-radius: 30px;
+}
+
+tr:hover {
+    background-color: thistle;
+}
+
+tr:nth-child(odd) {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(211, 168, 236, 0.164);
+    border-bottom: 0px;
+}
+
+th,
+td {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    border-color: rgb(0, 0, 0);
+    border: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+/*標題*/
+
+#unique {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 4vw;
+}
+
+
+/*會員資料*/
+
+.membership {
+    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    border: 0px double rgba(156, 59, 212, );
+    padding: 10%;
+    border-collapse: collapse;
+    width: 80%
+}
+
+#fieldset {
+    width: 80%;
+    border-color: rgba(234, 213, 247, 0.678);
+}
+
+
+/* 會員表格同寬 */
+
+.input-name {
+    box-sizing: border-box;
+    width: calc(100% - 100px);
+}
+
+
+/* 引述 */
+
+.quote {
+    text-align: center;
+    background-color: rgb(234, 213, 247);
+    background-size: 80%;
+    height: 60%;
+    /* padding-bottom: 40px; */
+    padding-right: 70px;
+    display: block;
+    /* word-wrap: break-word; */
+    /* text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+
+
+/* 目錄 */
+
+.navbar {
+    top: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    font-size: 2vw;
+    /* position: fixed; */
+    text-align: center;
+    line-height: 6vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    z-index: index 9
+}
+
+#navtable {
+    width: 60%;
+    font-family: 'Times New Roman', Times, serif;
+    border: 0px double rgb(255, 255, 255);
+    border-collapse: collapse;
+    border-radius: 30px;
+    z-index: index 9
+}
+
+
+/* 影音 */
+
+#myVideo {
+    display: block;
+    width: 80%;
+    height: 80%;
+    aspect-ratio: auto;
+    top: 0;
+    left: 0;
+    z-index: index 0;
+}

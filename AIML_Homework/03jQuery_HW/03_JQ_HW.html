@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- jQuery homework 01 -->
+    <h1>1.圓形面積計算</h>
+        <form method>
+            請輸入半徑: <input type="text" id="r" name="r">
+            <input type="button" id="myButton" name="計算" value="計算"> 面積是: <input type="text" id="ans" name="ans">
+        </form>
+
+        <!-- jQuery homework 01 -->
+        <title>JQ_HW01</title>
+        <script>
+            $('#myButton').click(function() {
+                var a = $('#r').val();
+                if (a == "" || isNaN(a)) {
+                    alert("請輸入數字");
+                    return;
+                };
+                $('#ans').val((Math.pow(a, 2) * Math.PI).toFixed(2));
+            });
+        </script>
+
+        <hr>
+
+        <!-- jQuery homework 02 -->
+        <h1>2.Login</h>
+            <form action="02_JQ_HW2(LOGIN.)html" method="post" name="FORM1">
+                name:<input type="text" name="name" id="name"><br> passwd:
+                <input type="password" name="password" id="passwd"><br>
+
+                <input type="radio" name="rdoCourse" value="1 checked">Java
+                <input type="radio" name="rdoCourse" value="2">C#<br>
+
+                <input type="submit" id="checkstring" style="width:60" value="OK">
+            </form>
+        <!-- jQuery homework 02 -->
+        <title>JQ_HW02</title>
+        <script>
+            $('#checkstring').click(function() {
+
+                var s1 = $('#name').val();
+                var s2 = $('#passwd').val();
+
+                if (!s1 || !s2) {
+                    alert('EMPTY');
+                    return false;
+                }
+                if (s2.length < 8) {
+                    alert('passwd<8');
+                    return false;
+                }
+                return true;
+            });
+        </script>
+        
+        <hr>
+
+        <!-- jQuery homework 03 -->
+        <h1>3.輸入今天日期,顯示民國日期與年齡</h>
+            <form>
+                今天日期: <input type="text" id="CurDate" name="CurDate" readonly="readonly"> 你的生日: <input type="date" id="birthday" name="birthday">
+                <input type="button" name="submit" value="submit" id="submitDate">
+            </form>
+
+        <!-- jQuery homework 03 -->
+        <title>JQ_HW03</title>
+        <script>
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth() + 1;
+            var y = date.getFullYear();
+            $('#CurDate').val(
+                y + '/' + m + '/' + d);
+
+            $('#submitDate').click(function() {
+                var birthday = new Date($('#birthday').val()); //input是字串，所以要變成DATE
+                var today = new Date();
+                var age = today.getFullYear() - birthday.getFullYear();
+                var Ryears = birthday.getFullYear() - 1911;
+
+                birthday.setFullYear(today.getFullYear());
+
+                if (birthday > today) {
+                    age -= 1;
+                };
+
+                document.write("你的生日:民國" + Ryears + "年" + (birthday.getMonth() + 1) + "月" + birthday.getDate() + "日" + "<br>");
+                document.write("你目前的年齡是:" + age + "歲")
+
+            });
+        </script>
+
+            <hr>
+
+        <!-- jQuery homework 04 -->
+        <h1>4.BMI計算</h>
+            <form>
+                身高（公分）<input type="text" name="tall" id="tall">
+                <br> 體重（公斤）
+                <input type="text" name="kg " id="kg"><br>
+                <input type="button" name="submit" value="submit" id="submitTall">
+                
+                <br> BMI指數
+                <input type="text" name="BMI" id="result1">
+                <br> 診斷結果
+                <input type="text" name="result" id="result2"><br>
+            </form>
+
+        <!-- jQuery homework 04 -->
+        <title>JQ_HW04</title>
+        <script>
+            $('#submitTall').click(function() {
+                var h = $('#tall').val();
+                var w = $('#kg').val();
+
+                //isNaN()非數字為true
+                if (h == " " || w == " ") {
+                    alert("輸入不可為空");
+                    return;
+                } else if (isNaN(h) || isNaN(w)) {
+                    alert("請輸入數字");
+                    return;
+                };
+
+                var result1 = (w / (Math.pow(h / 100, 2))).toFixed(2);
+                $('#result1').val(result1);
+
+                if (result1 >= 27) {
+                    $('#result2').val("肥胖");
+
+                } else if (24 <= result1) {
+                    $('#result2').val("體重過重");
+
+                } else if (18.5 <= result1) {
+                    $('#result2').val("正常範圍");
+
+                } else if (result1 < 18.5) {
+                    $('#result2').val("體重過輕");
+                };
+            });
+        </script>
+
+            <hr>
+
+            <!-- jQuery homework 05 -->
+            <h1>5.mouseOver</h>
+                <h2>Javascript Mouse Over/Out Example</h2>
+                <img src="./imageHW05/over.jpg" id="dmm" name="picture" Border=0 alt="error">
+
+            <!-- jQuery homework 05 -->
+            <title>JQ_HW05 Mouse Over/Out Example</title>
+            <script laungage="jquery ">
+                $('#dmm').mouseover(function() {
+                    this.src = './imageHW05/over.jpg';
+                });
+
+                $('#dmm').mouseout(function() {
+                    this.src = './imageHW05/out.jpg';
+                });
+
+                $('#dmm').click(function() {
+                    location.href = "https://tw.yahoo.com/ ";
+                });
+            </script>
+
+            <hr>
+
+            <!-- jQuery homework 06 -->
+            <h1>6.select</h>
+                <form name="navForm" action="{action page}">
+                    <select name="jumpmenu" id="jumpmenu">
+                    <option>Jump to...</option>
+                    <option value="http://www.ntu.edu.tw">NTU</option>
+                    <option value="http://www.nctu.edu.tw">NCTU</option>
+                    <option value="http://www.nthu.edu.tw">NTHU</option>
+                </select>
+                </form>
+
+            <!-- jQuery homework 06 -->
+            <title>JQ_HW06 select</title>
+            <script>
+                $('#jumpmenu').change(function(event) {
+                    var selectedURL = $('option:selected').val();
+                    var yes = confirm('Are you sure that you like to go to ' + selectedURL + '?');
+                    if (yes) {
+                        location.href = selectedURL;
+                    } else {
+                        alert('Redo!');
+                    };
+                });
+            </script>
+
+</body>
+
+</html>
